@@ -1,0 +1,23 @@
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-platform-jvm'
+
+group 'com.chrynan'
+version rootProject.ext.libraryVersion
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
+
+    expectedBy project(':markupdsl-common')
+
+    implementation 'com.github.chRyNaN.spannable:spannable-jvm:v1.0.2'
+    implementation 'com.github.chRyNaN.markup:markup-jvm:v0.1.1'
+
+    testCompile "junit:junit:4.12"
+    testCompile "org.jetbrains.kotlin:kotlin-test"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+}

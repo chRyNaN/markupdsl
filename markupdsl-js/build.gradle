@@ -1,0 +1,20 @@
+apply plugin: 'kotlin-platform-js'
+
+group 'com.chrynan'
+version rootProject.ext.libraryVersion
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js"
+
+    expectedBy project(':markupdsl-common')
+
+    implementation 'com.github.chRyNaN.spannable:spannable-js:v1.0.2'
+    implementation 'com.github.chRyNaN.markup:markup-js:v0.1.1'
+
+    testCompile "org.jetbrains.kotlin:kotlin-test-js"
+}

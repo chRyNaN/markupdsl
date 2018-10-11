@@ -1,11 +1,4 @@
-pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-platform-common") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
 rootProject.name = 'markup-dsl'
-
+include 'markupdsl-common'
+include 'markupdsl-jvm'
+include 'markupdsl-js'
